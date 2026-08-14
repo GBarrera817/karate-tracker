@@ -1,0 +1,80 @@
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ---------------------------------------------------------------------------
+# Entornos virtuales
+# ---------------------------------------------------------------------------
+# pipenv gestiona el entorno; el Pipfile y Pipfile.lock SÍ van a git.
+# Solo ignoramos el venv local (si usas PIPENV_VENV_IN_PROJECT=1 crea .venv/).
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# ---------------------------------------------------------------------------
+# Django
+# ---------------------------------------------------------------------------
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Archivos estáticos recolectados y subidas de usuario (se regeneran / no versionar)
+/static/
+/staticfiles/
+/media/
+
+# ---------------------------------------------------------------------------
+# Variables de entorno y secretos
+# ---------------------------------------------------------------------------
+# NUNCA subir el SECRET_KEY, credenciales de BD, etc.
+.env
+.env.*
+!.env.example
+
+# ---------------------------------------------------------------------------
+# Editores / IDEs
+# ---------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ---------------------------------------------------------------------------
+# Sistema operativo
+# ---------------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+
+# ---------------------------------------------------------------------------
+# Cobertura de tests / cachés
+# ---------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
