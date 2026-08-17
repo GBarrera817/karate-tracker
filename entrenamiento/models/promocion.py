@@ -18,6 +18,7 @@ class Promocion(models.Model):
 
     class Meta:
         verbose_name = 'Promoción'
+        verbose_name_plural = 'Promociones'
         ordering = ['-fecha']
 
     def __str__(self):

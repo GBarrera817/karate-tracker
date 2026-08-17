@@ -14,6 +14,7 @@ class Sesion(models.Model):
 
     class Meta:
         verbose_name = 'Sesión'
+        verbose_name_plural = 'Sesiones'
         ordering = ['-fecha']
 
     def __str__(self):

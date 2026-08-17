@@ -7,11 +7,21 @@ class Tecnica(models.Model):
     KATA = 'kata'
     KUMITE = 'kumite'
     IDO_GEIKO = 'ido_geiko'
+    DACHI = 'dachi'
+    TSUKI = 'tsuki'
+    UCHI = 'uchi'
+    UKE = 'uke'
+    GERI = 'geri'
     CATEGORIA_CHOICES = [
         (KIHON, 'Kihon'),
         (KATA, 'Kata'),
         (KUMITE, 'Kumite'),
-        (IDO_GEIKO, 'Ido Geiko')
+        (IDO_GEIKO, 'Ido Geiko'),
+        (DACHI, 'Dachi'),
+        (TSUKI, 'Tsuki'),
+        (UCHI, 'Uchi'),
+        (UKE, 'Uke'),
+        (GERI, 'Geri')
     ]
 
     nombre = models.CharField(max_length=150, unique=True)
