@@ -10,7 +10,7 @@ class Tecnica(models.Model):
     CATEGORIA_CHOICES = [
         (KIHON, 'Kihon'),
         (KATA, 'Kata'),
-        (KUMITE, 'Kumite')
+        (KUMITE, 'Kumite'),
         (IDO_GEIKO, 'Ido Geiko')
     ]
 

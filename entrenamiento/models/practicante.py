@@ -12,7 +12,7 @@ class Practicante(models.Model):
         (SENSEI, 'Sensei')
     ]
 
-    user = models.CharField(User, on_delete=models.CASCADE, related_name='practicante')
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='practicante')
     rol = models.CharField(max_length=10, choices=ROL_CHOICES, default=ALUMNO)
     cinturon_actual = models.ForeignKey(
         Cinturon,
