@@ -2,7 +2,7 @@ from rest_framework import serializers
 from ..models import Cinturon
 
 
-class CinturonSerializar(serializers.ModelSerializer):
+class CinturonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Cinturon
