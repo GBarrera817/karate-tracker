@@ -6,4 +6,13 @@ class CinturonSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Cinturon
-        fields = ['ido', 'nombre', 'orden', 'color_hex', 'sesiones_requeridas']
+        fields = [
+            'id',
+            'nombre',
+            'orden',
+            'color_hex',
+            'sesiones_requeridas',
+            # 'puede_crear_tecnicas',
+            # 'puede_promover'
+            'otorga_autoridad',
+        ]

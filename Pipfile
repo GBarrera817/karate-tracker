@@ -7,6 +7,7 @@ name = "pypi"
 django = ">=5.1"
 djangorestframework = "*"
 django-cors-headers = "*"
+djangorestframework-simplejwt = {extras = ["crypto"], version = "*"}
 
 [dev-packages]
 

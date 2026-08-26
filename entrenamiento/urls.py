@@ -13,7 +13,7 @@ router = DefaultRouter()
 router.register(r'cinturones', CinturonViewSet)
 router.register(r"tecnicas", TecnicaViewSet)
 router.register(r"practicantes", PracticanteViewSet)
-router.register(r"sesiones", SesionViewSet)
+router.register(r"sesiones", SesionViewSet, basename='sesion')
 router.register(r"asistencias", AsistenciaViewSet)
 router.register(r"promociones", PromocionViewSet)
 
