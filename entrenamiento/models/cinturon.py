@@ -11,9 +11,8 @@ class Cinturon(models.Model):
         help_text='Si es True, quien tenga este cinturón puede crear técnicas (café y superiores)'
     )
     puede_promover = models.BooleanField(
-        default=True,
+        default=False,
         help_text='Si es True, quien tenga este cinturón puede promover a otros (negro y danes)'
-
     )
 
     class Meta:

@@ -16,15 +16,6 @@ def _cinturon(practicante):
     return practicante.cinturon_actual
 
 
-def tiene_autoridad(practicante):
-
-    return (
-        practicante is not None
-        and practicante.cinturon_actual is not None
-        and practicante.cinturon_actual.otorga_autoridad
-    )
-
-
 class PuedeGestionarTecnicas(permissions.BasePermission):
     """Regla - Leer: cualquier autenticado. Escribir: sensei o autoridad."""
 
@@ -40,7 +31,7 @@ class PuedeGestionarTecnicas(permissions.BasePermission):
 
         es_sensei = practicante.rol == practicante.SENSEI
         cint = _cinturon(practicante)
-        puede_por_grado = cint is None and cint.puede_crear_tecnicas
+        puede_por_grado = cint is not None and cint.puede_crear_tecnicas
 
         return es_sensei or puede_por_grado
 
@@ -54,7 +45,7 @@ class PuedePromover(permissions.BasePermission):
         
         practicante = get_practicante(request.user)
         cint = _cinturon(practicante)
-        
+
         if cint is None or not cint.puede_promover:
             return False
 
