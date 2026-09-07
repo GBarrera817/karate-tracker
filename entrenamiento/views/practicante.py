@@ -4,13 +4,14 @@ from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
 from ..models import Practicante
 from ..serializers import PracticanteSerializer
+from ..permissions import EscrituraSoloSensei
 
 
 class PracticanteViewSet(viewsets.ModelViewSet):
 
     queryset = Practicante.objects.select_related('user', 'cinturon_actual').all()
     serializer_class = PracticanteSerializer
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated, EscrituraSoloSensei]
 
     @action(detail=True, methods=['get'])
     def estadisticas(self, request, pk=None):

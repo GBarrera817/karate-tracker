@@ -85,3 +85,19 @@ class PromocionAPITests(APITestCase):
         resp = self.client.get(f'/api/practicantes/{self.alumno.id}/estadisticas/')
         self.assertEqual(resp.status_code, status.HTTP_200_OK)
         self.assertIn('porcentaje_asistencia', resp.data)
+
+    def test_alumno_no_puede_crear_cinturon_403(self):
+        self.autenticar(self.u_alumno)
+        resp = self.client.post('/api/cinturones/', {'nombre': 'Verde', 'orden': 3})
+        self.assertEqual(resp.status_code, status.HTTP_403_FORBIDDEN)
+
+    def test_sensei_puede_crear_cinturon_201(self):
+        self.autenticar(self.u_sensei)
+        resp = self.client.post('/api/cinturones/', {'nombre': 'Verde', 'orden': 3})
+        self.assertEqual(resp.status_code, status.HTTP_201_CREATED)
+
+    def test_alumno_puede_leer_cinturones_200(self):
+        """La lectura sigue abierta a cualquier autenticado."""
+        self.autenticar(self.u_alumno)
+        resp = self.client.get('/api/cinturones/')
+        self.assertEqual(resp.status_code, status.HTTP_200_OK)

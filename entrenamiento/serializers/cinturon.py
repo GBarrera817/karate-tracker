@@ -12,7 +12,6 @@ class CinturonSerializer(serializers.ModelSerializer):
             'orden',
             'color_hex',
             'sesiones_requeridas',
-            # 'puede_crear_tecnicas',
-            # 'puede_promover'
-            'otorga_autoridad',
+            'puede_crear_tecnicas',
+            'puede_promover'
         ]
