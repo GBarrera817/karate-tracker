@@ -14,15 +14,15 @@ class PromocionViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
 
-        practicante = serializer.validate_data['practicante']
-        cinturon_destino = serializer.validate_data['cinturon_hasta']
+        practicante = serializer.validated_data['practicante']
+        cinturon_destino = serializer.validated_data['cinturon_hasta']
         otorgada_por = self.request.user.practicante
 
         try:
             promocion = practicante.promover_a(cinturon_destino, otorgada_por)
         except DjangoValidationError as e:
             # Traduce el error del modelo a un 400 con mensaje legible.
-            raise serializer.ValidationError(e.messages)
+            raise serializers.ValidationError(e.messages)
 
         serializer.instance = promocion
     
