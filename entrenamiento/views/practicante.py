@@ -1,4 +1,4 @@
-from rest_framework import viewssets
+from rest_framework import viewsets
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
@@ -16,4 +16,4 @@ class PracticanteViewSet(viewsets.ModelViewSet):
     def estadisticas(self, request, pk=None):
         practicante = self.get_object()
 
-        return Response(practicante.estadisticas_apoyo()))
+        return Response(practicante.estadisticas_apoyo())
