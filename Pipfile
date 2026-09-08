@@ -9,6 +9,10 @@ djangorestframework = "*"
 django-cors-headers = "*"
 djangorestframework-simplejwt = {extras = ["crypto"], version = "*"}
 python-dotenv = "*"
+gunicorn = "*"
+whitenoise = "*"
+psycopg2-binary = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
