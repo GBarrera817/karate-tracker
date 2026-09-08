@@ -13,6 +13,18 @@ class PracticanteViewSet(viewsets.ModelViewSet):
     serializer_class = PracticanteSerializer
     permission_classes = [IsAuthenticated, EscrituraSoloSensei]
 
+    @action(detail=False, methods=['get'])
+    def yo(self, request):
+        """Devuelve el practicante asociado al usuario autenticado."""
+
+        practicante = getattr(request.user, 'practicante', None)
+
+        if practicante is None:
+            return Response({'detail': 'El usuario no tiene practicante asociado.'})
+
+        serializer = self.get_serializer(practicante)
+        return Response(serializer.data)
+
     @action(detail=True, methods=['get'])
     def estadisticas(self, request, pk=None):
         practicante = self.get_object()
